@@ -30,3 +30,5 @@ C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\obj\Debug\ne
 C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\obj\Debug\netcoreapp2.1\ApiProjetoFinal.dll
 C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\obj\Debug\netcoreapp2.1\ApiProjetoFinal.pdb
 C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\obj\Debug\netcoreapp2.1\ApiProjetoFinal.csproj.CopyComplete
+C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\bin\Debug\netcoreapp2.1\x86\e_sqlite3.dll
+C:\Users\KAIQUE HEINEN\source\repos\ApiProjetoFinal\ApiProjetoFinal\bin\Debug\netcoreapp2.1\x64\e_sqlite3.dll

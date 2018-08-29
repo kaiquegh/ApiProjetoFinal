@@ -41,7 +41,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Editar(int id)
         {
-            return View();
+            var comercio = _context.Comercios.FirstOrDefault(x => x.Id == id);
+            if (comercio == null) return RedirectToAction("Index");
+
+            return View(comercio);
         }
 
         [HttpPost]
@@ -58,7 +61,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Deletar(int id)
         {
-            return View();
+            var comercio = _context.Comercios.FirstOrDefault(x => x.Id == id);
+            if (comercio == null) return RedirectToAction("Index");
+
+            return View(comercio);
         }
 
         [HttpPost]

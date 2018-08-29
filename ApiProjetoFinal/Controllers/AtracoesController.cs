@@ -19,6 +19,7 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -42,7 +43,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Editar(int id)
         {
-            return View();
+            var atracao = _context.Atracoes.FirstOrDefault(x => x.Id == id);
+            if (atracao == null) return RedirectToAction("Index");
+
+            return View(atracao);
         }
 
         [HttpPost]
@@ -60,7 +64,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Deletar(int id)
         {
-            return View();
+            var atracao = _context.Atracoes.FirstOrDefault(x => x.Id == id);
+            if (atracao == null) return RedirectToAction("Index");
+
+            return View(atracao);
         }
 
         [HttpPost]

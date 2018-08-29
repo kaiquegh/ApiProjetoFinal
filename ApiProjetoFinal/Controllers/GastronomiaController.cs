@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiProjetoFinal.Data;
+using ApiProjetoFinal.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiProjetoFinal.Controllers
@@ -10,7 +12,7 @@ namespace ApiProjetoFinal.Controllers
     {
         private readonly AplicationDbContext _context;
 
-        public AtracoesController(AplicationDbContext context)
+        public GastronomiaController(AplicationDbContext context)
         {
             _context = context;
         }
@@ -26,7 +28,7 @@ namespace ApiProjetoFinal.Controllers
         }
 
         [HttpPost]
-        public IActionResult Novo(Atracoes atracoes)
+        public IActionResult Novo(Gastronomia gastronomia)
         {
             if (ModelState.IsValid)
             {
@@ -39,11 +41,14 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Editar(int id)
         {
-            return View();
+            var gastronomia = _context.Gastronomia.FirstOrDefault(x => x.Id == id);
+            if (gastronomia == null) return RedirectToAction("Index");
+
+            return View(gastronomia);
         }
 
         [HttpPost]
-        public IActionResult Editar(Atracoes atracoes)
+        public IActionResult Editar(Gastronomia gastronomia)
         {
             if (ModelState.IsValid)
             {
@@ -56,11 +61,14 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Deletar(int id)
         {
-            return View();
+            var gastronomia = _context.Gastronomia.FirstOrDefault(x => x.Id == id);
+            if (gastronomia == null) return RedirectToAction("Index");
+
+            return View(gastronomia);
         }
 
         [HttpPost]
-        public IActionResult Deletar(Atracoes atracoes)
+        public IActionResult Deletar(Gastronomia gastronomia)
         {
             try
             {
@@ -69,7 +77,7 @@ namespace ApiProjetoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return View(atracoes);
+                return View(gastronomia);
             }
         }
     }

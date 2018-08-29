@@ -42,7 +42,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Editar(int id)
         {
-            return View();
+            var hospedagem = _context.Hospedagens.FirstOrDefault(x => x.Id == id);
+            if (hospedagem == null) return RedirectToAction("Index");
+
+            return View(hospedagem);
         }
 
         [HttpPost]
@@ -60,7 +63,10 @@ namespace ApiProjetoFinal.Controllers
 
         public IActionResult Deletar(int id)
         {
-            return View();
+            var hospedagem = _context.Hospedagens.FirstOrDefault(x => x.Id == id);
+            if (hospedagem == null) return RedirectToAction("Index");
+
+            return View(hospedagem);
         }
 
         [HttpPost]
